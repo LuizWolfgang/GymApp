@@ -1,9 +1,9 @@
-![Simulator Screen Shot - iPhone 14 - 2023-02-22 at 16 50 54](https://user-images.githubusercontent.com/74063154/220744802-1a5ddcd2-2ff2-433f-931a-73d307d9719c.png)
-![Simulator Screen Shot - iPhone 14 - 2023-02-22 at 16 51 00](https://user-images.githubusercontent.com/74063154/220744842-4a108d1e-f549-451d-ad8a-a25fea49caa3.png)
-![Simulator Screen Shot - iPhone 14 - 2023-02-22 at 16 51 22](https://user-images.githubusercontent.com/74063154/220744858-789c688a-f215-4183-8bae-ee731dd63596.png)
-![Simulator Screen Shot - iPhone 14 - 2023-02-22 at 16 51 29](https://user-images.githubusercontent.com/74063154/220744869-3737ec4e-8253-48a2-8a3b-96286da95beb.png)
-![Simulator Screen Shot - iPhone 14 - 2023-02-22 at 16 51 32](https://user-images.githubusercontent.com/74063154/220744879-38b7f506-c9e1-423a-88c9-7d649a3773fe.png)
-![Simulator Screen Shot - iPhone 14 - 2023-02-22 at 16 51 43](https://user-images.githubusercontent.com/74063154/220744891-70da5037-83aa-4a4c-b4d8-d9eb6eccc300.png)
+![Screen Shot 2023-02-22 at 16 59 45](https://user-images.githubusercontent.com/74063154/220745368-0b733a91-79c9-4502-a8fd-10e3abfc6d1b.png)
+![Screen Shot 2023-02-22 at 16 59 53](https://user-images.githubusercontent.com/74063154/220745378-20f45e9d-8397-4d8e-88fa-bbe358f26f5b.png)
+![Screen Shot 2023-02-22 at 17 00 17](https://user-images.githubusercontent.com/74063154/220745397-a52776cc-25db-4b69-b838-c75df2d905e2.png)
+![Screen Shot 2023-02-22 at 17 00 24](https://user-images.githubusercontent.com/74063154/220745403-bdeb7937-84f7-4b03-9d02-b7c3859ea0e6.png)
+![Screen Shot 2023-02-22 at 17 00 31](https://user-images.githubusercontent.com/74063154/220745414-b329c2c6-7fdf-4e56-ab48-e4ba4a852280.png)![Screen Shot 2023-02-22 at 17 00 43](https://user-images.githubusercontent.com/74063154/220745438-5fc3ea17-3197-4537-b387-5ea7455841d9.png)
+
 
 Ignite-Gym
 
