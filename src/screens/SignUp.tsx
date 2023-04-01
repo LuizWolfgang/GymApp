@@ -12,9 +12,13 @@ import { Button } from "@components/Button";
 import { useNavigation } from "@react-navigation/native";
 
 import { useForm, Controller } from "react-hook-form";
+
 import { api } from "@services/api";
-import axios from "axios";
 import { AppError } from "@utils/AppError";
+
+import { useState } from "react";
+import { useAuth } from "@hooks/useAuth";
+import { Platform } from "react-native";
 
 type FormDataProps = {
   name: string;
@@ -24,8 +28,12 @@ type FormDataProps = {
 }
 
 export function SignUp(){
+  const [isLoading, setIsLoading] = useState(false);
+
   const navigation = useNavigation();
+
   const toast = useToast();
+  const { singIn } = useAuth();
 
   const signUpSchema = yup.object({
     name: yup.string().required('Informe o nome'),
@@ -53,8 +61,11 @@ export function SignUp(){
 
   async function handleSignUp({name, email, password}: FormDataProps){
     try {
-      const response = await api.post('/users', { name, email, password })
-      console.log(response.data)
+      setIsLoading(true);
+
+      await api.post('/users', { name, email, password })
+      await singIn(email, password);
+
     } catch (error) {
       const isAppError = error instanceof AppError;
       const title = isAppError ? error.message : 'Não foi possivel criar a conta. Tente mais tarde'
@@ -64,16 +75,18 @@ export function SignUp(){
         placement: 'top',
         bgColor: 'red.500'
       })
+    } finally {
+      setIsLoading(false);
     }
   }
 
   return (
     <ScrollView
-      contentContainerStyle={{ flexGrow: 1, paddingBottom: 80}}
+      contentContainerStyle={{ flexGrow: 1}}
       showsVerticalScrollIndicator={false}
     >
 
-      <VStack flex={1} px={10} pb={16}>
+      <VStack flex={1} px={10} pb={Platform.OS === 'ios' ? 80 : 16}>
         <Image
           source={BackgroundImg}
           alt="Pessoas treinando"
@@ -154,6 +167,7 @@ export function SignUp(){
           <Button
             title="Criar e acessar"
             onPress={handleSubmit(handleSignUp)}
+            isLoading={isLoading}
           />
         </Center>
 

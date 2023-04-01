@@ -1,4 +1,4 @@
-import {StatusBar } from 'react-native';
+import { StatusBar } from 'react-native';
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto'
 import { NativeBaseProvider } from "native-base";
 import { Loading } from '@components/Loading';
@@ -15,10 +15,9 @@ export default function App() {
         backgroundColor="transparent"
         translucent //comecar a partir do topo
       />
-      <AuthContextProvider value={{ oi: 'oi'}}>
-        { fontsLoaded ? <Routes/> : <Loading/>}
+      <AuthContextProvider>
+        { fontsLoaded ? <Routes/> : <Loading/> }
       </AuthContextProvider>
-
     </NativeBaseProvider>
   );
 }

@@ -13,7 +13,8 @@ import { Button } from "@components/Button";
 
 import { useNavigation } from "@react-navigation/native";
 import { AppError } from "@utils/AppError";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { Platform } from "react-native";
 
 type FormData = {
   email: string,
@@ -22,9 +23,9 @@ type FormData = {
 
 export function SignIn(){
   const [ loading, setLoading ] = useState(false)
-  const { signIn } = useAuth();
+  const { singIn } = useAuth();
   const toast = useToast();
-
+  const ref = useRef(0)
   const navigation = useNavigation<AuthNavigatorRoutesProps>();
 
   const { control, handleSubmit, formState: { errors } } = useForm({
@@ -36,8 +37,9 @@ export function SignIn(){
 
   async function handleSignIn({ email, password}: FormData){
     try {
+
       setLoading(true)
-      await signIn(email, password)
+      await singIn(email, password)
     } catch (error) {
       const isAppError = error instanceof AppError;
       const title = isAppError ? error.message : 'Não foi possível entrar. Tente novamente mais tarde.'
@@ -54,7 +56,7 @@ export function SignIn(){
 
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1}} showsVerticalScrollIndicator={false}>
-      <VStack flex={1} px={10} pb={16} >
+      <VStack flex={1} px={10} pb={Platform.OS === 'ios' ? 80 : 16}>
         <Image
           source={BackgroundImg}
           alt="Pessoas treinando"
@@ -91,6 +93,7 @@ export function SignIn(){
                 value={value}
                 errorMessage={errors.email?.message}
                 autoCapitalize="none"
+                ref={ref}
               />
             )}
           />
