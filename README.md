@@ -7,7 +7,7 @@
 
 Ignite-Gym
 
-<h3 align="center">Ignite Gym</h3>
+<h3 align="center">Gym App</h3>
 --- 
 <p align="center"> Treine seu corpo e sua mente
     <br>
